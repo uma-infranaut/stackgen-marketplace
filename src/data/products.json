@@ -1,0 +1,97 @@
+[
+    {
+      "id": "infracost",
+      "name": "InfraCost",
+      "provider": "StackGen Finance",
+      "version": "2.2.0",
+      "category": ["DevOps Tools", "FinOps"],
+      "tags": ["Cost", "Cloud", "FinOps", "Infrastructure", "Optimization"],
+      "description": "Real-time cloud infrastructure cost estimation and optimization tool for DevOps and FinOps teams manage cloud spending.",
+      "features": [
+        "Real-time cost estimation for AWS, Azure, Google Cloud, and other major providers",
+        "Integration with infrastructure-as-code tools (Terraform, CloudFormation, etc.)",
+        "Cost breakdown by resource, service, and team",
+        "Cost anomaly detection and alerts",
+        "Custom budget management and spending controls"
+      ],
+      "downloads": 4100,
+      "rating": 4.8,
+      "lastUpdated": "2025-03-10"
+    },
+    {
+      "id": "appstack",
+      "name": "AppStack",
+      "provider": "StackGen Development",
+      "version": "1.5.0",
+      "category": ["Development Tools"],
+      "tags": ["Development", "Scaffolding", "Templates"],
+      "description": "Full-stack application scaffolding and management tool with built-in best practices and design patterns.",
+      "features": [
+        "Project templates for multiple frameworks and stacks",
+        "Component generation with best practices",
+        "Built-in linting and code quality tools",
+        "Development workflow automation",
+        "Integration with popular CI/CD pipelines"
+      ],
+      "downloads": 3300,
+      "rating": 4.4,
+      "lastUpdated": "2025-02-20"
+    },
+    {
+      "id": "clouddeploy",
+      "name": "CloudDeploy",
+      "provider": "StackGen Cloud",
+      "version": "1.8.3",
+      "category": ["DevOps Tools", "Cloud"],
+      "tags": ["Cloud", "Containers", "DevOps"],
+      "description": "One-click deployment solution for containerized applications across multiple cloud providers.",
+      "features": [
+        "Support for AWS, Azure, and Google Cloud",
+        "Zero-downtime deployments",
+        "Automated rollbacks",
+        "Deployment history and audit logs",
+        "Environment configuration management"
+      ],
+      "downloads": 3900,
+      "rating": 4.5,
+      "lastUpdated": "2025-01-15"
+    },
+    {
+      "id": "stackgen-core",
+      "name": "StackGen Core",
+      "provider": "StackGen Official",
+      "version": "3.0.2",
+      "category": ["Core Services"],
+      "tags": ["Framework", "Core", "Official"],
+      "description": "The official core framework for building and integrating all StackGen services and components.",
+      "features": [
+        "Common authentication and authorization",
+        "Service discovery and registry",
+        "Event bus and messaging system",
+        "Extensible plugin architecture",
+        "Comprehensive documentation and examples"
+      ],
+      "downloads": 9200,
+      "rating": 4.9,
+      "lastUpdated": "2025-03-01"
+    },
+    {
+      "id": "cloudmanager",
+      "name": "CloudManager",
+      "provider": "StackGen Cloud",
+      "version": "2.1.0",
+      "category": ["DevOps Tools", "Cloud"],
+      "tags": ["Cloud", "Management", "Monitor"],
+      "description": "Unified cloud resource management dashboard with multi-cloud support and advanced monitoring.",
+      "features": [
+        "Cross-cloud resource management",
+        "Cost tracking and optimization",
+        "Performance monitoring and alerts",
+        "Security compliance scanning",
+        "Infrastructure visualization"
+      ],
+      "downloads": 4700,
+      "rating": 4.6,
+      "lastUpdated": "2025-02-12"
+    }
+  ]
