@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppStack - StackGen Marketplace</title>
+    <link rel="stylesheet" href="/css/marketplace.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-logo">
+                <a href="http://localhost:1313/">StackGen Marketplace</a>
+            </div>
+            <div class="header-search">
+                <form action="/search/" method="get">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit"><i class="search-icon"></i></button>
+                </form>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/modules/">Modules</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/providers/">Providers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+<section class="content-section">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="http://localhost:1313/">Home</a> &gt; 
+            <a href="/products">Products</a> &gt; 
+            AppStack
+        </div>
+        
+        <article class="content-item">
+            <h1>AppStack</h1>
+            
+            <div class="item-meta">
+                
+                <span>Published: Apr 4, 2025</span>
+                
+                
+                <span>Provider: StackGen Official</span>
+                
+                
+                <span>Version: 2.0.0</span>
+                
+            </div>
+            
+            <div class="item-description">
+                A modular approach to application deployment with pre-built components and infrastructure templates
+            </div>
+            
+            
+            <div class="item-taxonomy">
+                
+                <div class="categories">
+                    <strong>Categories:</strong>
+                    
+                    <a href="/categories/deployment/" class="tag">deployment</a>
+                    
+                    <a href="/categories/infrastructure/" class="tag">infrastructure</a>
+                    
+                </div>
+                
+                
+                
+                <div class="tags">
+                    <strong>Tags:</strong>
+                    
+                    <a href="/tags/deployment/" class="tag">deployment</a>
+                    
+                    <a href="/tags/infrastructure/" class="tag">infrastructure</a>
+                    
+                    <a href="/tags/templates/" class="tag">templates</a>
+                    
+                    <a href="/tags/modular/" class="tag">modular</a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            <div class="item-content">
+                <h2 id="what-is-an-appstack">What is an AppStack?</h2>
+<p>An AppStack in StackGen is a modular approach to application deployment that allows developers to compose applications using pre-built components and infrastructure templates. It represents your application infrastructure as code in a reusable, templated form that can be deployed consistently across environments.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="modular-architecture">Modular Architecture</h3>
+<p>AppStacks employ a modular architecture that separates applications into discrete, manageable components:</p>
+<ul>
+<li><strong>Base Infrastructure</strong> - Common infrastructure elements shared across environments</li>
+<li><strong>Environment-specific Configurations</strong> - Customizations for different deployment targets</li>
+<li><strong>Resource Modules</strong> - Reusable components like databases, queues, or API gateways</li>
+</ul>
+<h3 id="infrastructure-as-code">Infrastructure as Code</h3>
+<p>AppStacks generate infrastructure code automatically from visual designs:</p>
+<ul>
+<li>Terraform code generation for all major cloud providers</li>
+<li>Version-controlled infrastructure definitions</li>
+<li>Configuration drift prevention with GitOps workflows</li>
+</ul>
+<h3 id="multi-cloud-support">Multi-Cloud Support</h3>
+<p>Deploy your applications consistently across different cloud providers:</p>
+<ul>
+<li>AWS</li>
+<li>Azure</li>
+<li>Google Cloud</li>
+<li>On-premise environments</li>
+</ul>
+<h3 id="pre-built-templates">Pre-built Templates</h3>
+<p>Start quickly with pre-built templates for common application patterns:</p>
+<ul>
+<li>Three-tier web applications</li>
+<li>Microservices architectures</li>
+<li>Serverless applications</li>
+<li>Data processing pipelines</li>
+</ul>
+<h2 id="how-appstacks-work">How AppStacks Work</h2>
+<p>AppStacks follow a structured approach to application deployment:</p>
+<ol>
+<li><strong>Design</strong> - Visually design your application architecture using the StackGen designer</li>
+<li><strong>Configure</strong> - Add environment-specific configurations and variables</li>
+<li><strong>Generate</strong> - Automatically generate infrastructure as code (Terraform, etc.)</li>
+<li><strong>Deploy</strong> - Deploy to your target environment with built-in CI/CD integration</li>
+<li><strong>Manage</strong> - Monitor and update your application infrastructure</li>
+</ol>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Accelerated Development</strong> - Deploy applications faster with pre-built components</li>
+<li><strong>Reduced Complexity</strong> - Abstract away infrastructure details for developers</li>
+<li><strong>Consistent Deployments</strong> - Ensure consistent deployment across environments</li>
+<li><strong>Cost Control</strong> - Optimize infrastructure costs with built-in cost estimation</li>
+<li><strong>Governance</strong> - Enforce organizational policies and security standards</li>
+<li><strong>Knowledge Preservation</strong> - Capture and reuse organizational best practices</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="application-modernization">Application Modernization</h3>
+<p>Transform legacy applications into modern, cloud-native architectures using AppStacks to incrementally modernize components.</p>
+<h3 id="multi-environment-deployments">Multi-Environment Deployments</h3>
+<p>Maintain consistency across development, testing, staging, and production environments with environment-specific configurations.</p>
+<h3 id="cloud-migration">Cloud Migration</h3>
+<p>Accelerate cloud migration by templating application infrastructure and deploying consistently to new cloud environments.</p>
+<h3 id="devops-enablement">DevOps Enablement</h3>
+<p>Empower development teams with self-service infrastructure deployment while maintaining governance and best practices.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>StackGen Platform v2.0 or higher</li>
+<li>Git repository for version control</li>
+<li>Cloud provider accounts (for deployment targets)</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Contact our sales team for a demonstration and personalized onboarding to start using AppStacks for your organization.</p>
+
+            </div>
+        </article>
+    </div>
+</section>
+
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 StackGen Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - StackGen Marketplace</title>
+    <link rel="stylesheet" href="/css/marketplace.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-logo">
+                <a href="http://localhost:1313/">StackGen Marketplace</a>
+            </div>
+            <div class="header-search">
+                <form action="/search/" method="get">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit"><i class="search-icon"></i></button>
+                </form>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/modules/">Modules</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/providers/">Providers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+<section class="content-section">
+  <div class="container">
+    <h1>Search Results</h1>
+    
+    <div class="search-container">
+      <form id="searchForm" action="/search/" method="get">
+        <input type="text" id="searchInput" name="query" placeholder="Search modules, products, and services..." value="">
+        <button type="submit"><i class="search-icon"></i> Search</button>
+      </form>
+    </div>
+    
+    <div id="searchResults" class="search-results">
+      
+      <div class="all-pages">
+        <h2>All Available Content</h2>
+        <ul>
+          
+            <li>
+              <a href="http://localhost:1313/posts/my-first-post/">My First Post</a> (Section: posts)
+              <span></span>
+            </li>
+          
+            <li>
+              <a href="http://localhost:1313/products/appstack/">AppStack</a> (Section: products)
+              <span>A modular approach to application deployment with pre-built components and infrastructure templates</span>
+            </li>
+          
+            <li>
+              <a href="http://localhost:1313/services/infracost-estimator/">Infracost Estimator</a> (Section: services)
+              <span>A Go-based server that provides infrastructure cost estimation by using Infracost</span>
+            </li>
+          
+            <li>
+              <a href="http://localhost:1313/modules/api-gateway/">API Gateway Module</a> (Section: modules)
+              <span>A comprehensive API Gateway module with authentication, rate limiting, and monitoring</span>
+            </li>
+          
+            <li>
+              <a href="http://localhost:1313/search/">Search</a> (Section: )
+              <span>Search for modules, products, and services</span>
+            </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+</section>
+
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 StackGen Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

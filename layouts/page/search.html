@@ -1,0 +1,81 @@
+{{ define "main" }}
+<section class="content-section">
+  <div class="container">
+    <h1>Search Results</h1>
+    
+    <div class="search-container">
+      <form id="searchForm" action="/search/" method="get">
+        <input type="text" id="searchInput" name="query" placeholder="Search modules, products, and services..." value="{{ .Params.query }}">
+        <button type="submit"><i class="search-icon"></i> Search</button>
+      </form>
+    </div>
+    
+    <div id="searchResults" class="search-results">
+      <!-- Direct list of all pages for diagnostic purposes -->
+      <div class="all-pages">
+        <h2>All Available Content</h2>
+        <ul>
+          {{ range .Site.RegularPages }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a> (Section: {{ .Section }})
+              <span>{{ if .Description }}{{ .Description }}{{ end }}</span>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      
+      <!-- Search results will display here -->
+      {{ if .Params.query }}
+        <h2>Search Results for "{{ .Params.query }}"</h2>
+        {{ $query := .Params.query | lower }}
+        {{ $results := slice }}
+        
+        {{ range .Site.RegularPages }}
+          {{ if or 
+            (findRE $query (lower .Title) 1) 
+            (findRE $query (lower .Description) 1) 
+            (findRE $query (lower .Content) 1) 
+            (findRE $query (lower (delimit .Params.tags " ")) 1)
+            (findRE $query (lower (delimit .Params.categories " ")) 1)
+          }}
+            {{ $results = $results | append . }}
+          {{ end }}
+        {{ end }}
+        
+        {{ if gt (len $results) 0 }}
+          <!-- Group results by section -->
+          {{ $grouped := dict }}
+          {{ range $results }}
+            {{ $section := .Section }}
+            {{ $list := index $grouped $section | default slice }}
+            {{ $grouped = merge $grouped (dict $section ($list | append .)) }}
+          {{ end }}
+          
+          <!-- Display results -->
+          {{ range $section, $items := $grouped }}
+            <h3>{{ $section | title }}</h3>
+            <div class="item-grid">
+              {{ range $items }}
+                <div class="item-card">
+                  <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                  <p>{{ .Description | truncate 100 }}</p>
+                  {{ if .Params.tags }}
+                    <div class="tags">
+                      {{ range .Params.tags }}
+                        <span class="tag">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  {{ end }}
+                  <a href="{{ .Permalink }}" class="btn">View Details</a>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ else }}
+          <p>No results found for "{{ .Params.query }}".</p>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

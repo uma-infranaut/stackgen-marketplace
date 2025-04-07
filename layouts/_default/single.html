@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="content-section">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="{{ .Site.BaseURL }}">Home</a> &gt; 
+            <a href="{{ .Section | relURL }}">{{ .Section | title }}</a> &gt; 
+            {{ .Title }}
+        </div>
+        
+        <article class="content-item">
+            <h1>{{ .Title }}</h1>
+            
+            <div class="item-meta">
+                {{ if .Date }}
+                <span>Published: {{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ end }}
+                {{ if .Params.provider }}
+                <span>Provider: {{ .Params.provider }}</span>
+                {{ end }}
+                {{ if .Params.version }}
+                <span>Version: {{ .Params.version }}</span>
+                {{ end }}
+            </div>
+            
+            <div class="item-description">
+                {{ .Description }}
+            </div>
+            
+            {{ if or .Params.tags .Params.categories }}
+            <div class="item-taxonomy">
+                {{ with .Params.categories }}
+                <div class="categories">
+                    <strong>Categories:</strong>
+                    {{ range . }}
+                    <a href="/categories/{{ . | urlize }}/" class="tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                {{ with .Params.tags }}
+                <div class="tags">
+                    <strong>Tags:</strong>
+                    {{ range . }}
+                    <a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <div class="item-content">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</section>
+{{ end }}

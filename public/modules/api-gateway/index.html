@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Gateway Module - StackGen Marketplace</title>
+    <link rel="stylesheet" href="/css/marketplace.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-logo">
+                <a href="http://localhost:1313/">StackGen Marketplace</a>
+            </div>
+            <div class="header-search">
+                <form action="/search/" method="get">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit"><i class="search-icon"></i></button>
+                </form>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/modules/">Modules</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/providers/">Providers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+<section class="content-section">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="http://localhost:1313/">Home</a> &gt; 
+            <a href="/modules">Modules</a> &gt; 
+            API Gateway Module
+        </div>
+        
+        <article class="content-item">
+            <h1>API Gateway Module</h1>
+            
+            <div class="item-meta">
+                
+                <span>Published: Jul 15, 2023</span>
+                
+                
+                <span>Provider: StackGen Official</span>
+                
+                
+                <span>Version: 2.1.0</span>
+                
+            </div>
+            
+            <div class="item-description">
+                A comprehensive API Gateway module with authentication, rate limiting, and monitoring
+            </div>
+            
+            
+            <div class="item-taxonomy">
+                
+                <div class="categories">
+                    <strong>Categories:</strong>
+                    
+                    <a href="/categories/networking/" class="tag">networking</a>
+                    
+                    <a href="/categories/security/" class="tag">security</a>
+                    
+                </div>
+                
+                
+                
+                <div class="tags">
+                    <strong>Tags:</strong>
+                    
+                    <a href="/tags/api/" class="tag">api</a>
+                    
+                    <a href="/tags/gateway/" class="tag">gateway</a>
+                    
+                    <a href="/tags/networking/" class="tag">networking</a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            <div class="item-content">
+                <h2 id="overview">Overview</h2>
+<p>This API Gateway module provides a fully featured solution for managing API traffic, including authentication, authorization, rate limiting, and monitoring.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>JWT authentication and authorization</li>
+<li>Rate limiting and throttling</li>
+<li>Request/response transformation</li>
+<li>Circuit breaking and fault tolerance</li>
+<li>Detailed logging and monitoring</li>
+<li>Swagger/OpenAPI integration</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;api_gateway&#34;</span> {
+</span></span><span style="display:flex;"><span>  source  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;stackgen/api-gateway/aws&#34;</span>
+</span></span><span style="display:flex;"><span>  version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2.1.0&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  name     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-api-gateway&#34;</span>
+</span></span><span style="display:flex;"><span>  domain   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;api.example.com&#34;</span>
+</span></span><span style="display:flex;"><span>  stage    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;production&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  throttling <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    rate  <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    burst <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  auth_enabled <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  logging_level <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INFO&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+            </div>
+        </article>
+    </div>
+</section>
+
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 StackGen Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

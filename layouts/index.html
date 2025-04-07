@@ -1,0 +1,116 @@
+{{ define "main" }}
+<div class="marketplace-home">
+  <!-- Hero section with search -->
+  <section class="hero">
+    <div class="container">
+      <h1>StackGen Marketplace</h1>
+      <p>Discover software products, modules, and services to accelerate your development</p>
+      
+      <div class="search-container">
+        <form action="/search/" method="get">
+          <input type="text" name="query" placeholder="Search modules, products, and services...">
+          <button type="submit"><i class="search-icon"></i> Search</button>
+        </form>
+      </div>
+      
+      <div class="browse-categories">
+        <a href="/modules/" class="category-pill">Modules</a>
+        <a href="/products/" class="category-pill">Products</a>
+        <a href="/services/" class="category-pill">Services</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured modules section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Modules</h2>
+        <a href="/modules/" class="view-all">View all modules</a>
+      </div>
+      
+      <div class="module-grid">
+        {{ range first 6 (where .Site.RegularPages "Section" "modules") }}
+          <div class="module-card">
+            <div class="module-info">
+              <div class="provider-badge">{{ .Params.provider }}</div>
+              <h3 class="module-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+              <p class="module-description">{{ .Description | truncate 100 }}</p>
+              
+              <div class="module-meta">
+                {{ if .Params.downloads }}
+                <span class="downloads">
+                  <i class="icon-download"></i> {{ .Params.downloads }} downloads
+                </span>
+                {{ end }}
+                {{ if .Params.version }}
+                <span class="version">
+                  <i class="icon-tag"></i> v{{ .Params.version }}
+                </span>
+                {{ end }}
+              </div>
+              
+              <div class="tags">
+                {{ range .Params.tags }}
+                  <span class="tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Products section -->
+  <section class="content-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <a href="/products/" class="view-all">View all products</a>
+      </div>
+      
+      <div class="product-grid">
+        {{ range first 3 (where .Site.RegularPages "Section" "products") }}
+          <div class="product-card">
+            <div class="product-info">
+              <h3 class="product-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+              <p class="product-description">{{ .Description | truncate 100 }}</p>
+              
+              <div class="product-meta">
+                {{ if .Params.provider }}
+                <span class="provider">
+                  By {{ .Params.provider }}
+                </span>
+                {{ end }}
+              </div>
+              
+              <a href="{{ .Permalink }}" class="btn">View Details</a>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Services</h2>
+        <a href="/services/" class="view-all">View all services</a>
+      </div>
+      
+      <div class="services-grid">
+        {{ range first 3 (where .Site.RegularPages "Section" "services") }}
+          <div class="service-card">
+            <h3 class="service-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="service-description">{{ .Description | truncate 150 }}</p>
+            <a href="{{ .Permalink }}" class="btn btn-outline">Learn More</a>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</div>
+{{ end }}

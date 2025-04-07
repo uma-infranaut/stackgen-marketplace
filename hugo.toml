@@ -1,0 +1,13 @@
+baseURL = "https://marketplace.stackgen.com/"
+languageCode = "en-us"
+title = "StackGen Marketplace"
+
+# Define taxonomies for organizing content
+[taxonomies]
+  category = "categories"
+  provider = "providers"
+  tag = "tags"
+
+[params]
+  description = "Discover and share software products, modules, and services for StackGen"
+  mainSections = ["modules", "products", "services"]

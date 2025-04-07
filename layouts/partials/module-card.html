@@ -1,0 +1,22 @@
+<div class="module-card">
+    <div class="module-info">
+      <div class="provider-badge">{{ .Params.provider }}</div>
+      <h3 class="module-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="module-description">{{ .Description | truncate 100 }}</p>
+      
+      <div class="module-meta">
+        <span class="downloads">
+          <i class="icon-download"></i> {{ .Params.downloads | default "0" }} downloads
+        </span>
+        <span class="version">
+          <i class="icon-tag"></i> v{{ .Params.version | default "1.0.0" }}
+        </span>
+      </div>
+      
+      <div class="tags">
+        {{ range .Params.tags }}
+          <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StackGen Marketplace</title>
+    <link>http://localhost:1313/products/</link>
+    <description>Recent content on StackGen Marketplace</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/products/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AppStack</title>
+      <link>http://localhost:1313/products/appstack/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/products/appstack/</guid>
+      <description>&lt;h2 id=&#34;what-is-an-appstack&#34;&gt;What is an AppStack?&lt;/h2&gt;&#xA;&lt;p&gt;An AppStack in StackGen is a modular approach to application deployment that allows developers to compose applications using pre-built components and infrastructure templates. It represents your application infrastructure as code in a reusable, templated form that can be deployed consistently across environments.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;h3 id=&#34;modular-architecture&#34;&gt;Modular Architecture&lt;/h3&gt;&#xA;&lt;p&gt;AppStacks employ a modular architecture that separates applications into discrete, manageable components:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Base Infrastructure&lt;/strong&gt; - Common infrastructure elements shared across environments&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Environment-specific Configurations&lt;/strong&gt; - Customizations for different deployment targets&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Resource Modules&lt;/strong&gt; - Reusable components like databases, queues, or API gateways&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;infrastructure-as-code&#34;&gt;Infrastructure as Code&lt;/h3&gt;&#xA;&lt;p&gt;AppStacks generate infrastructure code automatically from visual designs:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

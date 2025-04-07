@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="content-section">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        
+        <div class="terms-grid">
+            {{ range .Data.Terms.Alphabetical }}
+            <div class="term-card">
+                <h3><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h3>
+                <span class="count">{{ .Count }} items</span>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

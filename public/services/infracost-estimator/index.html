@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infracost Estimator - StackGen Marketplace</title>
+    <link rel="stylesheet" href="/css/marketplace.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-logo">
+                <a href="http://localhost:1313/">StackGen Marketplace</a>
+            </div>
+            <div class="header-search">
+                <form action="/search/" method="get">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit"><i class="search-icon"></i></button>
+                </form>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/modules/">Modules</a></li>
+                    <li><a href="/products/">Products</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/providers/">Providers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+<section class="content-section">
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="http://localhost:1313/">Home</a> &gt; 
+            <a href="/services">Services</a> &gt; 
+            Infracost Estimator
+        </div>
+        
+        <article class="content-item">
+            <h1>Infracost Estimator</h1>
+            
+            <div class="item-meta">
+                
+                <span>Published: Apr 4, 2025</span>
+                
+                
+                <span>Provider: StackGen Official</span>
+                
+                
+                <span>Version: 1.0.0</span>
+                
+            </div>
+            
+            <div class="item-description">
+                A Go-based server that provides infrastructure cost estimation by using Infracost
+            </div>
+            
+            
+            <div class="item-taxonomy">
+                
+                <div class="categories">
+                    <strong>Categories:</strong>
+                    
+                    <a href="/categories/cost-management/" class="tag">cost-management</a>
+                    
+                    <a href="/categories/optimization/" class="tag">optimization</a>
+                    
+                </div>
+                
+                
+                
+                <div class="tags">
+                    <strong>Tags:</strong>
+                    
+                    <a href="/tags/cost-estimation/" class="tag">cost-estimation</a>
+                    
+                    <a href="/tags/infrastructure/" class="tag">infrastructure</a>
+                    
+                    <a href="/tags/cloud/" class="tag">cloud</a>
+                    
+                    <a href="/tags/infracost/" class="tag">infracost</a>
+                    
+                </div>
+                
+            </div>
+            
+            
+            <div class="item-content">
+                <h2 id="overview">Overview</h2>
+<p>Infracost Estimator is a Go-based server that provides a service related to infrastructure cost estimation by using <a href="https://www.infracost.io/">Infracost</a>. This service helps you estimate cloud infrastructure costs before deployment, preventing unexpected expenses.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Accepts Topology ID and Organisation ID, gets the respective IAC zip and provides infracost estimation for the same</li>
+<li>Runs Infracost inside the same container (no sidecar required)</li>
+<li>Deployable to Kubernetes</li>
+</ul>
+<h2 id="admin-requirements">Admin Requirements</h2>
+<ul>
+<li><strong>Go</strong></li>
+<li><strong>Docker, Kubernetes</strong> (optional, for containerized deployment)</li>
+</ul>
+<h3 id="environment-variables">Environment Variables</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Variable</th>
+          <th>Description</th>
+          <th>Default Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>INFRACOST_API_KEY</code></td>
+          <td>API key to interact with Infracost</td>
+          <td>No default value</td>
+      </tr>
+      <tr>
+          <td><code>STACKGEN_AUTH_TOKEN</code></td>
+          <td>StackGen Personal Access Token</td>
+          <td>No default value</td>
+      </tr>
+      <tr>
+          <td><code>INFRACOST_PORT</code></td>
+          <td>The port on which the Infracost estimator will run</td>
+          <td><code>8000</code></td>
+      </tr>
+      <tr>
+          <td><code>APP_LOG_LEVEL</code></td>
+          <td>The log level for the service</td>
+          <td><code>INFO</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="logging">Logging</h3>
+<ul>
+<li>The log level can be adjusted using the <code>APP_LOG_LEVEL</code> environment variable</li>
+<li>Supported levels include <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, and <code>ERROR</code></li>
+</ul>
+<h2 id="deployment-options">Deployment Options</h2>
+<h3 id="docker-deployment">Docker Deployment</h3>
+<h4 id="build-the-docker-image">Build the Docker Image</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t cost-estimator -f ./Dockerfile .
+</span></span></code></pre></div><h2 id="run-the-docker-container">Run the Docker Container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 8080:8080 -e INFRACOST_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-infracost-api-key&#34;</span> -e STACKGEN_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-stackgen-personal-access-token&#34;</span> cost-estimator
+</span></span></code></pre></div><h2 id="kubernetes-deployment">Kubernetes Deployment</h2>
+<p>The service is designed to be deployable to Kubernetes clusters, making it scalable and resilient.</p>
+<h2 id="local-development">Local Development</h2>
+<ol>
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone &lt;repository-url&gt;
+</span></span><span style="display:flex;"><span>cd infracost-estimator
+</span></span></code></pre></div><ol start="2">
+<li>Install dependencies:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod tidy
+</span></span></code></pre></div><ol start="3">
+<li>Run the application:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go run cmd/main.go
+</span></span></code></pre></div><h3 id="example">Example:</h3>
+<p>Run the server with environment variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>INFRACOST_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-infracost-apikey&#34;</span> STACKGEN_AUTH_TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;StackGen-Personal-Access-Token&#34;</span> INFRACOST_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8000</span> APP_LOG_LEVEL<span style="color:#f92672">=</span>DEBUG go run cmd/main.go
+</span></span></code></pre></div><p>The server will start on the specified port and will be ready to handle requests.</p>
+<h2 id="api-usage">API Usage</h2>
+<h3 id="endpoints">Endpoints</h3>
+<ul>
+<li><code>GET /topology/:id/cost-estimation</code>: Accepts topology id of an appstack, organization id. Fetch IAC ZIP file using topology ID and OrgID, extracts it, and runs cost estimation using Infracost CLI.</li>
+</ul>
+<h3 id="parameters-as-query-params">Parameters (as Query params)</h3>
+<ul>
+<li><code>:id</code> (required): Topology ID(UUID) of an AppStack</li>
+<li><code>orgId</code> (required): Organization ID</li>
+</ul>
+<h3 id="content-type">Content Type</h3>
+<ul>
+<li>Accept header can be of <code>plain/text</code> or <code>application/json</code></li>
+<li>By default it is <code>application/json</code></li>
+</ul>
+<h3 id="testing-the-api">Testing the API</h3>
+<p>Use <strong>Postman</strong> or <strong>cURL</strong> to send a request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X GET <span style="color:#e6db74">&#34;http://your-server:8080/topology/&lt;topologyId&gt;/cost-estimation?orgId=&lt;organizationId&gt;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Accept: plain/text&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-v
+</span></span></code></pre></div><h2 id="support">Support</h2>
+<p>For questions or issues, please contact our support team at <a href="mailto:support@stackgen.com">support@stackgen.com</a>.</p>
+
+            </div>
+        </article>
+    </div>
+</section>
+
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 StackGen Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

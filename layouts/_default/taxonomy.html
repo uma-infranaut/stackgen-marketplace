@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="content-section">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        
+        <div class="item-grid">
+            {{ range .Pages }}
+            <div class="item-card">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Description | truncate 100 }}</p>
+                <div class="item-meta">
+                    {{ if .Date }}
+                    <span>Published: {{ .Date.Format "Jan 2, 2006" }}</span>
+                    {{ end }}
+                    {{ if .Params.provider }}
+                    <span>Provider: {{ .Params.provider }}</span>
+                    {{ end }}
+                </div>
+                <a href="{{ .Permalink }}" class="btn">View Details</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
